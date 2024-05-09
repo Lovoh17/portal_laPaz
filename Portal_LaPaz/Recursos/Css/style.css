@@ -1,6 +1,8 @@
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
+    height: 100%;
+    margin: 0;
     font-size: 17px;
     margin: 0;
     top: 0;
@@ -92,3 +94,24 @@ body{
     height: 180px;
     box-shadow: 3px 3px rgb(198, 197, 197);
 }
+
+.foter-container{
+    background: #114232;
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+    max-height: 100vh;
+    justify-items: end;
+    color: #FCDC2A;
+    padding: 5px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100px;
+    height: 100px;
+}
+
