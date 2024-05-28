@@ -6,10 +6,11 @@ body{
     top: 0;
     padding: 0;
     background: linear-gradient(to left, #ffff, #F7F6BB);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .back{
-    /*background: url(/Recursos/Imagenes/cjnsp.jpg);*/
     background-size: cover;
     box-sizing: border-box;
     filter: blur(4px);
@@ -68,6 +69,7 @@ body{
     text-decoration: underline;
   }
 
+
   .container_info {
     align-items: center;
     align-content: center;
@@ -90,13 +92,13 @@ body{
     grid-template-columns: 400px 600px;
     justify-content: center;
     text-align: center;
+    align-content: center;
     margin: auto;
     padding: 10px;
     max-width: 600px;
     width: 900px;
     height: 600px;
     column-gap: 14px;
-    
   }
 
   /*contenedor principal*/
@@ -104,12 +106,13 @@ body{
     /*border: 2px solid rgb(0, 0, 0);*/
     /*width: 400px;*/
     display: flex;
+    width: 400px;
     flex-direction: row;
     align-items: center;
     height: 500px;
     background: #FCDC2A;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    
+    margin-left: 10px;
   }
 
   .container_notas table{
@@ -188,4 +191,46 @@ h2, h3 {
 .container_notas_nivelSelector button:hover{
   background-color: #F7F6BB;
   opacity: .9;
+}
+
+@media screen and (max-width: 600px){
+  .container_header{
+    background-color: #FCDC2A;
+    margin: 0px;
+    align-items: center;
+    justify-content: center;    
+  }
+  .container_header nav{
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    justify-self: start;
+    margin: 0px;
+    margin-left: 0px;
+  }
+  .container_header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container_notas{
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 30px;
+    /*background-color: red;*/
+  }
+  .container_notas_menu{
+    /*background-color: #87A922;*/
+    font-size: 14px;
+    width: 300px;
+    height: 350px;
+  }
+  .container_notas table{
+    background: red;
+    width: auto;
+    height: 500px;
+    overflow: scroll;
+  }
 }

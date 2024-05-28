@@ -13,6 +13,12 @@ function aparecer() {
 
 function buscarNotas() {
     document.getElementById("tabla_mostrar").style.display = "block";
+    const myDiv = document.getElementById('Filter_notas');
+    if (window.innerWidth <= 600) {
+        myDiv.style.display = 'none';
+    } else {
+        myDiv.style.display = 'block';
+    }
 }
 function cambiarSelectores() {
     const selectNivel = document.getElementById('nivel');

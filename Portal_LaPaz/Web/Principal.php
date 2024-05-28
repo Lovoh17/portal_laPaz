@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Recursos/Css/stylePrincipal.css">
+    <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/stylePrincipal.css">
     
     <title>Document</title>
 </head>
@@ -11,7 +11,7 @@
     <div class="back"></div>
     <div class="container_header">
         <div class="container_logo">
-            <img src="/Recursos/Imagenes/cjnsp.jpg" alt="">
+            <img src="/Portal_LaPaz/Recursos/Imagenes/cjnsp-removebg-preview.png" alt="">
         </div>
         <nav>
             <ul>
@@ -28,7 +28,7 @@
     </div>
     <br><br>
     <div id="tabla" class="container_notas">
-        <div class="container_notas_menu">
+        <div class="container_notas_menu" id="Filter_notas">
             <H2>Buscar Notas</H2>
             <div class="container_notas_buscador">
                 <h3>Selecciona Nivel Academico:  </h3>
@@ -99,6 +99,6 @@
        
     </div>
 
-    <script src="/Scrip/principal.js"></script>
+    <script src="/Portal_LaPaz/Scrip/principal.js"></script>
 </body>
 </html>
