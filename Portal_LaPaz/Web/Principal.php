@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/stylePrincipal.css">
-    
     <title>Document</title>
 </head>
 <body>
@@ -22,8 +23,8 @@
             </ul>
         </nav>
     </div>
-    <div  id="inicio" class="container_info">
-        <h1>Porta Alumnos</h1>
+    <div  id="inicio" class="container_informacion">
+        <h1>Portal Alumnos</h1>
         <p>Colegio Josefio Nuestra Señora de la Paz</p>
     </div>
     <br><br>

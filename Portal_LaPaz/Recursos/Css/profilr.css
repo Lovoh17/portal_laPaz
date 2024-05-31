@@ -5,7 +5,16 @@ body{
     margin: 0px;
     top: 0;
     padding: 0;
+    max-height: 100vh;
+    overflow: hidden;
     background: linear-gradient(to left, #ffff, #F7F6BB);
+}
+@media screen and (max-width: 750px) {
+    body{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 }
 
 .profile{
@@ -13,7 +22,7 @@ body{
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
     width: 800px;
-    height: 800px;
+    height: 500px;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -27,7 +36,6 @@ body{
     flex-direction: column;
     width: 300px;
     height: 240px;
-    /*border: 2px solid red;*/
     padding: 20px;
     color: rgb(80, 78, 78);
     font-size: 20px;
@@ -40,7 +48,6 @@ body{
 .info_personal a{
     margin-left: 13px;
     color: rgb(60, 60, 60);
-   /* background: #d5d5d5;*/
     width: 60px;
     font:italic;
 }
@@ -84,20 +91,15 @@ body{
 }
 
 .profile_imagen{
-    /*border: 2px  solid rgb(19, 116, 154);*/
     width: 1fr;
-    height: 700px;
+    height: 600px;
     display: flex;
     flex-direction: column;
-    /*border: 2px solid rgb(130, 0, 117);*/
 }
 
 .profile_info{
-   /* border: 2px  solid rgb(0, 125, 73);*/
     width: 300px;
     height: 240px;
-   /*padding: 10px;*/
-    /*border: 2px solid blue;*/
     padding: 20px;
     color: rgb(80, 78, 78);
     font-size: 20px;

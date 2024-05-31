@@ -19,6 +19,16 @@ function buscarNotas() {
     } else {
         myDiv.style.display = 'block';
     }
+    if (window.innerWidth <= 800) {
+        myDiv.style.display = 'none';
+    } else {
+        myDiv.style.display = 'block';
+    }
+    if (window.innerWidth <= 1000) {
+        myDiv.style.display = 'none';
+    } else {
+        myDiv.style.display = 'block';
+    }
 }
 function cambiarSelectores() {
     const selectNivel = document.getElementById('nivel');
@@ -61,10 +71,10 @@ function aparecer(){
 
 }
 function Salir(){
-    window.history.back();
+    window.open("/Portal_LaPaz/Web/index.html");
 }
 function openPerfil(){
-    window.open("/web/perfil.php");
+    window.open("/Portal_LaPaz/Web/perfil.php");
 }
 
 const salmos = [
@@ -94,9 +104,10 @@ const indiceAleatorio = Math.floor(Math.random() * salmos.length);
 const salmo_rdm = salmos[indiceAleatorio];
 
 document.addEventListener("DOMContentLoaded", () => {
-    const salmoElemento = document.createElement("p");
+    const salmoElemento = document.createElement("spam");
     salmoElemento.setAttribute("id","salmo")
-    salmoElemento.style.color = "black";
     salmoElemento.textContent = salmo_rdm;
     document.body.appendChild(salmoElemento);
 });
+
+
