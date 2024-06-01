@@ -7,7 +7,8 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
     reader = new FileReader(); // Inicializar la variable reader aquí
 });
 
-document.getElementById('btnApply').addEventListener('click', function() {
+document.getElementById('btnApply').addEventListener('click', function(e) {
+    e.preventDefault();
     console.log('Botón clickeado'); // Verificar que el botón se esté haciendo clic correctamente
     if (selectedFile) {
         reader.onload = function(e) {

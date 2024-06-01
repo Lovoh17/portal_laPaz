@@ -6,44 +6,49 @@ body{
     top: 0;
     padding: 0;
     max-height: 100vh;
-    overflow: hidden;
     background: linear-gradient(to left, #ffff, #F7F6BB);
-}
-@media screen and (max-width: 750px) {
-    body{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile{
+    margin-top: -100px;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: auto;
     width: 800px;
-    height: 500px;
+    height: auto;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     padding: 20px;
-    column-gap: 20px;
-    margin: 40px;
-    margin-left: 300px;
+    column-gap: 10px;
+    margin: 10px;
 }
 
 .info_personal{
     display: flex;
     flex-direction: column;
-    width: 300px;
+    justify-content: center;
+    align-self: center;
+    width: 240px;
     height: 240px;
     padding: 20px;
     color: rgb(80, 78, 78);
     font-size: 20px;
-    box-shadow: 3px 4px 8px rgba(0,0,0,.5);
+    box-shadow: 3px 4px 8px  rgba(52, 200, 69, 0.5);
+}
+#uploadForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .info_personal h5{
-    margin-left: 15px;
+    margin-left: 10px;
+    margin: 10px;
 }
 .info_personal a{
     margin-left: 13px;
@@ -53,16 +58,17 @@ body{
 }
 
 .profile_imagen img{
-    width: 300px;
+    width: 240px;
     height: 300px;
     display: block;
     align-self: center;
     margin-top: 20px;
-    box-shadow: 3px 4px 8px rgba(0,0,0,.5);
+    box-shadow: 3px 4px 8px  rgba(52, 200, 69, 0.5);
 }
 
 .profile_imagen{
-    box-shadow: 3px 4px 8px rgba(0,0,0,.5);
+    box-shadow: 3px 4px 8px   rgba(52, 200, 69, 0.5);
+    height: auto;
 }
 
 .foto{
@@ -92,18 +98,17 @@ body{
 
 .profile_imagen{
     width: 1fr;
-    height: 600px;
     display: flex;
     flex-direction: column;
 }
 
 .profile_info{
-    width: 300px;
+    width: 240px;
     height: 240px;
     padding: 20px;
     color: rgb(80, 78, 78);
     font-size: 20px;
-    box-shadow: 3px 4px 8px rgba(0,0,0,.5);
+    box-shadow: 3px 4px 8px rgba(52, 200, 69, 0.5);
 }
 
 .profile_info button{
@@ -117,6 +122,6 @@ body{
     box-shadow: 2px 2px 2px #f9f9f9, -2px -2px  2px #00000026;
 }
 
-.profile:first-child .profile_imagen {
-    grid-row: 1/ span 2;
+.profile_imagen {
+    grid-row: span 3;
 }

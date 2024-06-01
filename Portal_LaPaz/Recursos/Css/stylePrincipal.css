@@ -22,54 +22,7 @@ body{
     z-index:  -1;
 }
 
-.container_header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FCDC2A;
-    padding: 10px 20px;
-}
 
-.container_logo {
-    width:  50px;
-    height: 50px;
-    display: flex;
-    
-    text-align: left;
-}
-
-.container_header nav {
-    padding: 10px;
-    border-radius: 5px;
-  /*  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
-    display: flex;
-    justify-content: flex-end;
-    color: #000000;
-  }
-  
-  .container_header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container_header nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  .container_header nav ul li a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .container_header li:hover {
-    color: #114232;
-    box-shadow: 2px 2px rgb(0, 0,0.0.5);
-    text-decoration: underline;
-  }
 
 
   .container_informacion {
