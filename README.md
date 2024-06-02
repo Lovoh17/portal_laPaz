@@ -22,13 +22,14 @@ El portal de notas permite a los alumnos consultar sus calificaciones y ver su p
 
 ```bash
 git clone https://github.com/tu-usuario/portal-de-notas.git
-
-Características
+```
+### Características
 Consulta de notas por parte de los alumnos.
 Gestión de notas por parte de los profesores.
 Interfaz amigable y fácil de usar.
 Seguridad en el manejo de datos sensibles.
-Tecnologías
+
+###Tecnologías
 HTML5
 CSS3
 JavaScript
