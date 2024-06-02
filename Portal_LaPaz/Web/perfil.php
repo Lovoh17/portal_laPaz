@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/header.css">
     <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/profilr.css">
+    <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/foteer.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
 </head>
@@ -14,7 +15,7 @@
         </div>
         <nav>
             <ul>
-                <li onclick="aparecer()">Incio</li>
+                <li onclick="principal()">Incio</li>
                 <li onclick="ocultar()">Ver Notas</li>
                 <li onclick="openPerfil()">Perfil</li>
                 <li onclick="Salir()">Salir</li>
@@ -61,5 +62,34 @@
         </div>
     </div>
     <script src="/Portal_LaPaz/Scrip/perfil.js" ></script>
+    <script src="/Portal_LaPaz/Scrip/principal.js" ></script>
+<footer>
+    <div class="cell-footer ">
+      <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="Fother-box">
+                <figure>
+                <a href="#">
+                    <img src="/Portal_LaPaz/Recursos/Imagenes/cjnsp.jpg" alt="Logo de cjnsp.css">
+                </a>
+                <p>Colegio Josefino Nuestra Señora de la Paz</p>
+                </figure>
+            </div>
+          <div class="Fother-box">
+            <h2>Universidad de el Salvador</h2>
+            <p>Departamento de Ingenieria y Arquitectura</p>
+            <p>Ingenieria de Sistemas Informaticos</p>
+          </div>
+          <div class="Fother-box">
+            <h2>SIGUENOS</h2>
+            <div class="red-social">
+                <a class="h-facebook" href="https://www.facebook.com/"><i class='bx bxl-facebook-circle'></i></a>
+                <a class="h-instagram" href="https://www.instagram.com/"><i class='bx bxl-instagram-alt'></i></a>
+                <a class="h-twitter" href="https://www.twitter.com/"><i class='bx bxl-twitter'></i></a>
+            </div>
+          </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

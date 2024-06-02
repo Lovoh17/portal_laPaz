@@ -6,6 +6,7 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/header.css">
+    <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/foteer.css">
     <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/stylePrincipal.css">
     <title>Document</title>
 </head>
@@ -28,7 +29,9 @@
         <h1>Portal Alumnos</h1>
         <p>Colegio Josefio Nuestra Señora de la Paz</p>
     </div>
+    
     <br><br>
+    
     <div id="tabla" class="container_notas">
         <div class="container_notas_menu" id="Filter_notas">
             <H2>Buscar Notas</H2>
@@ -64,6 +67,7 @@
                 <button class="btn" onclick="buscarNotas()">Buscar</button>
             </div>
         </div>
+        
         <table class="notas" id= "tabla_mostrar">
         <tr>
             <th>Tarea uno</th>
@@ -100,7 +104,8 @@
         ?>
        
     </div>
-
     <script src="/Portal_LaPaz/Scrip/principal.js"></script>
+    
 </body>
+
 </html>

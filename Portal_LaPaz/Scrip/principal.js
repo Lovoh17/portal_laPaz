@@ -70,11 +70,14 @@ function aparecer(){
     tabla.style.display = "none";
 
 }
+function principal(){
+    window.location.replace("/Portal_LaPaz/Web/Principal.php");
+}
 function Salir(){
-    window.open("/Portal_LaPaz/Web/index.html");
+    window.location.replace("/Portal_LaPaz/Web/index.html");
 }
 function openPerfil(){
-    window.open("/Portal_LaPaz/Web/perfil.php");
+    window.location.href = "/Portal_LaPaz/Web/perfil.php";
 }
 
 const salmos = [
@@ -109,5 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
     salmoElemento.textContent = salmo_rdm;
     document.body.appendChild(salmoElemento);
 });
+
+const foter = document.getElementById("foteer");
+foter.style.display="";
 
 

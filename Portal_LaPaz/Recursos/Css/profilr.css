@@ -6,10 +6,12 @@ body{
     top: 0;
     padding: 0;
     max-height: 100vh;
+    max-width: auto;
     background: linear-gradient(to left, #ffff, #F7F6BB);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -82,7 +84,6 @@ body{
 
 .profile_imagen input{
    font-size: 12px;
-   margin-left: 45px;
    /*border: 1px solid black;*/
    background: rgb(240, 229, 229);
    width: 300px;
@@ -124,4 +125,56 @@ body{
 
 .profile_imagen {
     grid-row: span 3;
+}
+
+@media screen and (max-width: 1000px) {
+    body{
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    body{
+        /*background: rgb(105, 105, 105);*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        max-height: 180vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+    .profile{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        width: 300px;
+        gap:10px;
+    }
+    @media screen and (max-width: 350px) {
+        body{
+            background-size: cover;
+            background-repeat: no-repeat;
+            max-height: 180vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+        }
+        .profile{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            width: auto;
+            gap:10px;
+        }
+        .profile_imagen{
+            width: 100%;
+            margin: 0;
+        }
+        
+    }
 }
