@@ -29,7 +29,7 @@ Gestión de notas por parte de los profesores.
 Interfaz amigable y fácil de usar.
 Seguridad en el manejo de datos sensibles.
 
-###Tecnologías
+### Tecnologías
 HTML5
 CSS3
 JavaScript
