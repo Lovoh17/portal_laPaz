@@ -36,3 +36,11 @@ Seguridad en el manejo de datos sensibles.
 - JavaScript
 - PHP
 - PostgreSQL
+
+Contacto
+Para preguntas, sugerencias o contribuciones adicionales, puedes contactarnos a través de:
+
+Nombre: Rafael Humberto Lino
+- Correo Electrónico: linolovo12@gmail.com
+- LinkedIn: Rafael Lino
+- GitHub: Lovoh17
