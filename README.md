@@ -30,8 +30,9 @@ Interfaz amigable y fácil de usar.
 Seguridad en el manejo de datos sensibles.
 
 ### Tecnologías
-HTML5
-CSS3
-JavaScript
-PHP
-PostgreSQL
+
+- HTML5
+- CSS3
+- JavaScript
+- PHP
+- PostgreSQL
