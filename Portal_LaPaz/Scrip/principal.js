@@ -104,7 +104,7 @@ const salmos = [
 ];
 
 const indiceAleatorio = Math.floor(Math.random() * salmos.length);
-const salmo_rdm = salmos[indiceAleatorio];
+const salmo_rdm = "DIOS ME VE";
 
 document.addEventListener("DOMContentLoaded", () => {
     const salmoElemento = document.createElement("spam");
