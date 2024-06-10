@@ -99,7 +99,6 @@ body{
     box-shadow: 3px 3px rgb(198, 197, 197);
 }
 
-/*media queri*/
 @media screen and (max-width: 600px) {
     body{
         margin-top: 150px;
@@ -164,9 +163,6 @@ body{
         height: auto;
     }
 }
-
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .grupo-1 {
         justify-content: center;

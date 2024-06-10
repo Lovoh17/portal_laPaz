@@ -8,7 +8,8 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     max-height: 100vh;
-    overflow: hidden;
+    overflow: scroll;
+    -webkit-animation: backwards;
     display: flex;
     flex-direction: column;
 }
@@ -40,15 +41,14 @@ body{
     width: 80%;
   }
 
-  .container_notas{
+  .container_notas {
     display: grid;
     grid-template-columns: 400px 600px;
     justify-content: center;
     text-align: center;
     align-content: center;
     padding: 10px;
-    max-width: 600px;
-    width: 900px;
+    max-width: 900px;
     column-gap: 14px;
   }
 
@@ -60,21 +60,34 @@ body{
     height: 500px;
     background: #FCDC2A;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-left: -200px;
   }
 
-  .container_notas table{
+  .container_notas table {
     height: 500px;
     width: 850px;
-    background: #114232;
+    background: #87A922;
     display: flex;
+    margin: 10px;
     flex-direction: column;
     text-align: center;
+    overflow: scroll;
+    overflow-y: auto;
   }
+
   .notas {
     padding: 10px;
     width: auto;
     border-collapse: collapse;
-    border: 2px solid #FCDC2A;
+    border: 2px solid #114232;
+    overflow: hidden;
+    margin-right: 50px;
+  }
+  .encabezado{
+    padding: 10px;
+    width: auto;
+    border-collapse: collapse;
+    background-color: #f9e895;
   }
   
   .notas th {
@@ -83,18 +96,51 @@ body{
     padding: 8px;
     text-align: left;
   }
-  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
   .notas td {
     border: 1px solid #FCDC2A;
     padding: 8px;
     color: #ffff;
+  }
+  .materia{
+    background-color: #f9e895;
+    border: 1px solid #FCDC2A;
+    padding: 8px;
+    text-align: left;
+  }
+  .notas{
+    border: 1px solid #FCDC2A;
+    padding: 8px;
+    color: #ffff;
+  }
+  th{
+    background-color: #f9e895;
+    border: 1px solid #FCDC2A;
+    padding: 8px;
+    text-align: left;
+    width: 100px;
+  }
+  td{
+    border: 1px solid #114232;
+    padding: 8px;
+    color: #000000;
+    width: 100px;
   }
   .container_notas {
     padding: 20px;
     border-radius: 5px;
     margin: 20px auto;
     width: 80%;
-}
+  }
 
 .container_notas_menu {
     display: flex;
@@ -175,6 +221,7 @@ h2, h3 {
     font-size: 14px;
     width: 300px;
     height: 350px;
+    margin: 0;
   }
   .container_notas table{
     background:#87A922;
@@ -232,6 +279,7 @@ h2, h3 {
     font-size: 14px;
     width: 300px;
     height: 350px;
+    margin: 0;
   }
   .container_notas table{
     background:#87A922;
@@ -278,6 +326,7 @@ h2, h3 {
     font-size: 14px;
     width: 400px;
     height: 350px;
+    margin: 0;
   }
   .container_notas table{
     background:#87A922;
@@ -299,9 +348,4 @@ h2, h3 {
   justify-content: center;
   display: flex;
   text-decoration:overline;
-}
-/*responsive*/
-@media screen and (max-width: 600px){
-  
-
 }

@@ -37,20 +37,13 @@
         <div class="container_notas_menu" id="Filter_notas">
             <H2>Buscar Notas</H2>
             <div class="container_notas_buscador">
-                <h3>Selecciona Nivel Academico:  </h3>
-                <select name="nivel" id="nivel">
-                    <option value="">1 grado</option>
-                    <option value="">2 grado</option>
-                    <option value="">3 grado</option>
-                    <option value="">4 grado</option>
-                    <option value="">5 grado</option>
-                    <option value="">6 grado</option>
-                    <option value="">7 grado</option>
-                    <option value="">8 grado</option>
-                    <option value="">9 grado</option>
-                    <option value="bach">1 Bachillerato</option>
-                    <option value="bach">2 Bachillerato</option>
-                </select>
+                <h3>Ver tu record de notas:  </h3>
+                <p name="nivel" id="nivel">
+                "El éxito no es la clave de la felicidad. 
+                La felicidad es la clave del éxito. 
+                Si amas lo que haces, tendrás éxito." 
+                - Albert Schweitzer
+                </p>
             </div>
             <div class="container_notas_nivelSelector">
                 <h3>Selecciona el Periodo Acedemico:</h3>
@@ -69,23 +62,11 @@
             </div>
         </div>
         
-        <table class="notas" id= "tabla_mostrar">
-        <tr>
-            <th>Materias</th>
-            <th>Tarea uno</th>
-            <th>Tarea dos</th>
-            <th>Tarea tres</th>
-            <th>Tarea cuatro</th>
-            <th>Actividades</th>
-            <th>Nota_examen</th>
-            <th>Promedio_Final</th>
-        </tr>
-
         <?php
             session_start();
 
             if (isset($_SESSION['pass']) && is_numeric($_SESSION['pass'])) {
-                $nie = (int)$_SESSION['pass']; // Asegurarse de que $nie sea un entero
+                $nie = (int)$_SESSION['pass']; 
 
                 $connection = pg_connect("host=localhost dbname=db_cLapaz user=postgres password=Ally.2203");
 
@@ -94,55 +75,53 @@
                     exit;
                 }
 
-                // Consulta para obtener los nombres de las materias
+                $nota_query = "SELECT tarea_uno, tarea_dos, tarea_tres, tarea_cuatro, actividades, nota_examen, promedio_final
+                            FROM tbl_nota
+                            WHERE nie = $nie";
+
                 $materia_query = "SELECT nombre FROM tbl_materias";
 
-                // Ejecutar la consulta
+                $nota_result = pg_query($connection, $nota_query);
                 $materia_result = pg_query($connection, $materia_query);
 
-                if ($materia_result) {
+                $notas = [];
+                $materias = [];
+                if (pg_num_rows($nota_result) > 0 && pg_num_rows($materia_result) > 0) {
+                    while ($row = pg_fetch_assoc($nota_result)) {
+                        $notas[] = $row;
+                    }
                     while ($row = pg_fetch_assoc($materia_result)) {
-                        echo "<tr>";
-                        foreach ($row as $materia => $nombre) {
-                            echo "<td>" . htmlspecialchars($nombre) . "</td>";
+                        $materias[] = $row["nombre"];
+                    }
+                } else {
+                    echo "No se encontraron resultados.";
+                    exit;
+                }
+
+                pg_close($connection);
+
+
+                if (!empty($notas) && !empty($materias)) {
+                    echo "<table id='tabla_mostrar'>";
+                    echo "<thead><tr><th>Materia</th><th>Tarea 1</th><th>Tarea 2</th><th>Tarea 3</th><th>Tarea 4</th><th>Actividades</th><th>Nota Examen</th><th>Promedio Final</th></tr></thead>";
+                    echo "<tbody>";
+                    for ($i = 0; $i < count($materias); $i++) {
+                        echo "<tr><td class='materia'>" . htmlspecialchars($materias[$i]) . "</td>";
+                        foreach ($notas[$i] as $nota) {
+                            echo "<td class='nota'>" . htmlspecialchars($nota) . "</td>";
                         }
                         echo "</tr>";
                     }
+                    echo "</tbody>";
+                    echo "</table>";
                 } else {
-                    echo "Error en la consulta de materias.\n";
+                    echo "No hay datos disponibles.";
                 }
-
-                // Consulta para obtener las notas de los alumnos
-                $nota_query = "SELECT tarea_uno, tarea_dos, tarea_tres, tarea_cuatro, actividades, nota_examen, promedio_final
-                            FROM tbl_nota
-                            WHERE nie = $1";
-
-                // Ejecutar la consulta segura usando pg_query_params
-                $result = pg_query_params($connection, $nota_query, array($nie));
-
-                if ($result) {
-                    if (pg_num_rows($result) > 0) {
-                        while ($row = pg_fetch_assoc($result)) {
-                            echo "<tr>";
-                            foreach ($row as $value) {
-                                echo "<td>" . htmlspecialchars($value) . "</td>"; // htmlspecialchars para evitar XSS
-                            }
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='8'>No hay datos disponibles</td></tr>";
-                    }
-                } else {
-                    echo "Error en la consulta de notas.\n";
-                }
-
-                // Cerrar la conexión a la base de datos
-                pg_close($connection);
             } else {
                 echo 'El valor de NIE no es válido.';
+                exit;
             }
         ?>
-
 
     </div>
     <script src="/Portal_LaPaz/Scrip/principal.js"></script>

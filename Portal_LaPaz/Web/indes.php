@@ -9,17 +9,14 @@
         echo "Error: No se pudo conectar a la base de datos.\n";
         exit;
     }
-    // Convertir $contra a un entero
     $contra = (int)$contra;
-
-    // Consulta segura usando pg_query_params
     $query = "SELECT * FROM tbl_alumnos WHERE nombre = $1 AND nie = $2";
     $login = pg_query_params($connection, $query, array($nombre, $contra));
 
     $cantidad = pg_num_rows($login);
     if ($cantidad > 0) {
         $_SESSION['nombre'] = $nombre;
-        $_SESSION['pass'] = $contra; // Guarda el NIE como un entero en la sesión
+        $_SESSION['pass'] = $contra; 
         header('Location: Principal.php');
         exit;
     } else {
