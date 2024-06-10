@@ -80,40 +80,26 @@ function openPerfil(){
     window.location.href = "/Portal_LaPaz/Web/perfil.php";
 }
 
-const salmos = [
-    "Salmo 1: El justo y el impío",
-    "Salmo 23: El Señor es mi pastor",
-    "Salmo 27: El Señor es mi luz y mi salvación",
-    "Salmo 34: Bendeciré al Señor en todo tiempo",
-    "Salmo 37: El destino de los malvados y de los justos",
-    "Salmo 51: Misericordia, Dios mío, por tu bondad",
-    "Salmo 91: Bajo la sombra del Altísimo",
-    "Salmo 103: Bendice, alma mía, al Señor",
-    "Salmo 121: El Señor es tu guardián",
-    "Salmo 139: Señor, tú me sondeas y me conoces",
-    "Salmo 150: Alabad al Señor",
-    "Salmo 19: La gloria de Dios en la creación y en la ley",
-    "Salmo 42: Como el ciervo anhela las corrientes de agua",
-    "Salmo 46: Dios es nuestro refugio y fortaleza",
-    "Salmo 62: En Dios solo descansa mi alma",
-    "Salmo 63: Oh Dios, tú eres mi Dios",
-    "Salmo 84: Qué amable es tu morada, Señor de los ejércitos",
-    "Salmo 95: Venid, aclamemos al Señor",
-    "Salmo 100: Aclama al Señor, toda la tierra",
-    "Salmo 119: Tu palabra es una lámpara a mis pies"
+const frases = [
+    "DIOS ME VE",
+    "ADELANTE SIEMPRE ADELANTE, PUES LO QUIERE SAN JOSE",
+    "TODO POR LA GLORIA DE JESUS MARIA Y JOSE",
+    "YO AMO SER JOSEFINO",
+    "PRESENCIA DE DIOS, ESTIMA DE SI MISMO Y AMOR AL PROJIMO",
+    "BENDITO SEAS JESUS",
+    "INFINITAMENTE SEAS ALABADO, MI JESUS SACRAMENTADO",
+    "SAN JOSE LUZ DE LOS PATRIARCAS",
 ];
 
-const indiceAleatorio = Math.floor(Math.random() * salmos.length);
-const salmo_rdm = "DIOS ME VE";
+const indiceAleatorio = Math.floor(Math.random() * frases.length);
+const fraseAleatoria = frases[indiceAleatorio];
 
 document.addEventListener("DOMContentLoaded", () => {
-    const salmoElemento = document.createElement("spam");
-    salmoElemento.setAttribute("id","salmo")
-    salmoElemento.textContent = salmo_rdm;
-    document.body.appendChild(salmoElemento);
+    const fraseElemento = document.createElement("span");
+    fraseElemento.setAttribute("id", "salmo");
+    fraseElemento.textContent = fraseAleatoria;
+    document.body.appendChild(fraseElemento);
 });
 
-const foter = document.getElementById("foteer");
-foter.style.display="";
 
 

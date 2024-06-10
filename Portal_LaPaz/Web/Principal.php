@@ -7,6 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/header.css">
     <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/foteer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Portal_LaPaz/Recursos/Css/stylePrincipal.css">
     <title>Document</title>
 </head>
@@ -70,42 +71,81 @@
         
         <table class="notas" id= "tabla_mostrar">
         <tr>
+            <th>Materias</th>
             <th>Tarea uno</th>
             <th>Tarea dos</th>
             <th>Tarea tres</th>
             <th>Tarea cuatro</th>
             <th>Actividades</th>
             <th>Nota_examen</th>
-            <th>AutoEvalucion</th>
             <th>Promedio_Final</th>
         </tr>
 
         <?php
-        $nie = "456789";
-        session_start();
-        //$codigo = $_SESSION['usuario']; 
-        $connection = pg_connect("host=localhost dbname=db_cLapaz user=postgres password=Ally.2203");
+            session_start();
 
-        $notas= "SELECT tarea_uno, tarea_dos, tarea_tres, tarea_cuatro, 'Actividades', nota_examen, 'autoEvalucion', 'Promedio_Final'
-                    FROM tbl_notas where nie = $nie" ;
-        $result = pg_query($connection, $notas);
+            if (isset($_SESSION['pass']) && is_numeric($_SESSION['pass'])) {
+                $nie = (int)$_SESSION['pass']; // Asegurarse de que $nie sea un entero
 
-        if (pg_num_rows($result) > 0) {
-            while ($row = pg_fetch_row($result)) {
-                echo "<tr>";
-                for ($i = 0; $i < count($row); $i++) {
-                    echo "<td>" . $row[$i] . "</td>";
+                $connection = pg_connect("host=localhost dbname=db_cLapaz user=postgres password=Ally.2203");
+
+                if (!$connection) {
+                    echo "Error: No se pudo conectar a la base de datos.\n";
+                    exit;
                 }
-                echo "</tr>";
+
+                // Consulta para obtener los nombres de las materias
+                $materia_query = "SELECT nombre FROM tbl_materias";
+
+                // Ejecutar la consulta
+                $materia_result = pg_query($connection, $materia_query);
+
+                if ($materia_result) {
+                    while ($row = pg_fetch_assoc($materia_result)) {
+                        echo "<tr>";
+                        foreach ($row as $materia => $nombre) {
+                            echo "<td>" . htmlspecialchars($nombre) . "</td>";
+                        }
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "Error en la consulta de materias.\n";
+                }
+
+                // Consulta para obtener las notas de los alumnos
+                $nota_query = "SELECT tarea_uno, tarea_dos, tarea_tres, tarea_cuatro, actividades, nota_examen, promedio_final
+                            FROM tbl_nota
+                            WHERE nie = $1";
+
+                // Ejecutar la consulta segura usando pg_query_params
+                $result = pg_query_params($connection, $nota_query, array($nie));
+
+                if ($result) {
+                    if (pg_num_rows($result) > 0) {
+                        while ($row = pg_fetch_assoc($result)) {
+                            echo "<tr>";
+                            foreach ($row as $value) {
+                                echo "<td>" . htmlspecialchars($value) . "</td>"; // htmlspecialchars para evitar XSS
+                            }
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='8'>No hay datos disponibles</td></tr>";
+                    }
+                } else {
+                    echo "Error en la consulta de notas.\n";
+                }
+
+                // Cerrar la conexión a la base de datos
+                pg_close($connection);
+            } else {
+                echo 'El valor de NIE no es válido.';
             }
-        } else {
-            echo "<tr><td colspan='8'>No hay datos disponibles</td></tr>";
-        }
         ?>
-       
+
+
     </div>
     <script src="/Portal_LaPaz/Scrip/principal.js"></script>
-    
 </body>
 
 </html>

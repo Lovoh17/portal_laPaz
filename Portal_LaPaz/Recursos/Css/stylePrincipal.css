@@ -1,6 +1,5 @@
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-style: italic;
+    font-family: 'Poppins', sans-serif;
     font-size: 17px;
     margin: 0;
     top: 0;
@@ -53,10 +52,7 @@ body{
     column-gap: 14px;
   }
 
-  /*contenedor principal*/
   .container_notas_menu{
-    /*border: 2px solid rgb(0, 0, 0);*/
-    /*width: 400px;*/
     display: flex;
     width: 400px;
     flex-direction: row;
@@ -67,10 +63,12 @@ body{
   }
 
   .container_notas table{
-    /*border: 2px solid rgb(7, 108, 176);*/
     height: 500px;
-    width: 750px;
+    width: 850px;
     background: #114232;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
   .notas {
     padding: 10px;

@@ -2,8 +2,7 @@
     background: #114232;
     display: grid;
     grid-template-rows: 150px;
-    column-gap: 30px;
-    height: 50vh;
+    column-gap: 25px;
     width: 100%;
     align-items: center;
     justify-content: flex-end;
@@ -14,10 +13,7 @@
 footer {
     background-color: #114232;
     color: #fff;
-    padding: 20px 0;
     width: 100%;
-    height: auto;
-    font-family: Arial, sans-serif;
 }
 
 .cell-footer {

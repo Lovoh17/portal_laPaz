@@ -1,6 +1,5 @@
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-style: italic;
+    font-family: 'Poppins', sans-serif;
     max-height: 100vh;
     margin: 0;
     font-size: 17px;
@@ -99,6 +98,7 @@ body{
     height: 180px;
     box-shadow: 3px 3px rgb(198, 197, 197);
 }
+
 /*media queri*/
 @media screen and (max-width: 600px) {
     body{
